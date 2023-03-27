@@ -1,0 +1,22 @@
+class TelaPython:
+    def __init__(self):
+        layout = [
+            [sg.Text('Login', size=(5,0), text_color="black"), sg.Input(size=(15,0),key='login')],
+            [sg.Text('Senha', size=(5,0), text_color="black"), sg.Input(size=(15,0),key='senha')],
+            [sg.Text('obs: Funciona apenas no Google Chrome')],
+            [sg.Button("INICIAR")]
+        ]
+    def janela(self):
+        sg.theme('black')
+
+        janela = sg.Window("Auto Cupom").layout(layout)
+           
+        self.button, self.values = janela.Read()
+    
+    def Iniciar(self):
+        nome = self.values["login"]
+        idade = self.values["senha"]
+
+
+tela = TelaPython()
+tela.Iniciar()
