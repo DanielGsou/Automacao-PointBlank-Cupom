@@ -13,7 +13,7 @@ senha = os.environ['senha']
 
 class TelaPython:
     def __init__(self):
-        sg.change_look_and_feel('DarkBrown4')
+        sg.change_look_and_feel('LightBrown13')
         layout = [
             [sg.Text('Login', size=(5,0)), sg.Input(size=(20,0),key='login')],
             [sg.Text('Senha', size=(5,0)), sg.Input(size=(20,0),key='senha')],
@@ -22,7 +22,7 @@ class TelaPython:
             [sg.Text('Criado por: Itoko Discord: itoko#8626')]
         ]
 
-        janela = sg.Window("Auto Cupom", no_titlebar=True, alpha_channel=0.5).layout(layout)
+        janela = sg.Window("Auto Cupom", no_titlebar=True).layout(layout)
            
                   
 
@@ -31,10 +31,6 @@ class TelaPython:
     def Iniciar(self):
         login = self.values["login"]
         senha = self.values["senha"]
-        print(f'login: {login}')
-        print(f'senha: {senha}')
-
-
 
 
 tela = TelaPython()
@@ -48,12 +44,11 @@ driver = webdriver.Chrome()
 driver.get("https://pb.ongame.net/cupons/?ref=menu?site=ongame")
 time.sleep(2)
 
-# confirmando políticas e termos
+#confirmando políticas e termos
 driver.find_element('xpath', '/html/body/div[3]/div[2]/div/button').click()
 time.sleep(1)
 
 #colocando login e senha
-
 driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[1]/div/input').send_keys(login)
 driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[2]/div/input').send_keys(senha)    
 
