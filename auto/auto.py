@@ -4,6 +4,13 @@ from selenium.webdriver.common.by import By
 import time
 import PySimpleGUI as sg
 
+from dotenv import load_dotenv
+load_dotenv()
+import os 
+
+login = os.environ["login"]
+senha = os.environ['senha']
+
 class TelaPython:
     def __init__(self):
         sg.change_look_and_feel('DarkBrown4')
@@ -47,11 +54,8 @@ time.sleep(1)
 
 #colocando login e senha
 
-def Iniciar(self):
-    login = self.values['login']
-    senha = self.values['senha']
-    driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[1]/div/input').send_keys(f'login: {login}')
-    driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[2]/div/input').send_keys(f'senha: {senha}')     
+driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[1]/div/input').send_keys(login)
+driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/div[2]/div/input').send_keys(senha)    
 
 #clicando em ''entrar''
 driver.find_element('xpath', '/html/body/div[2]/div/div/div/div/div/div[2]/form/section[1]/button').click()
