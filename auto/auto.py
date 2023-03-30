@@ -16,7 +16,7 @@ class TelaPython:
         sg.change_look_and_feel('LightBrown13')
         layout = [
             [sg.Text('Login', size=(5,0)), sg.Input(size=(20,0),key='login')],
-            [sg.Text('Senha', size=(5,0)), sg.Input(size=(20,0),key='senha')],
+            [sg.Text('Senha', size=(5,0)), sg.Input(size=(20,0),key='senha',password_char="*")],
             [sg.Text('obs: Precisa ter o Google Chrome instalado')],
             [sg.Button("INICIAR", )],
             [sg.Text('Criado por: Itoko Discord: itoko#8626')]
